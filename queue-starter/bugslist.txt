@@ -1,0 +1,15 @@
+PeekFront;
+	-> Using t_peek_nonempty, it seems like peekFront doesnt work the way it should. I enqueue 25, 15, 5 and it doesnt pass when looking at 25 but it passes for 5. 
+	-> looks at the back.
+
+Dequeue;
+	-> Using t_dequeue_peek, it seems it removes to back instead of removing the front.
+	-> Enqueued 1-10, dequeued 3 times should remove 1,2,3 but it removes 10,9,8
+	-> tested with looking for 4, and it couldnt see it
+	-> tested with looking for 7, and it could see it
+clean;
+	-> *~ in Makefile gave errors so it was removed.
+
+Memory leaks;
+	-> using valgrind (make m), we get total heap usage: 99 allocs, 26 frees
+	-> the destructor I dont think it deallocating everything
